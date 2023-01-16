@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<style>
+		html{
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			height: 80px;
+			position: sticky;
+			top: 0;
+			background-color: #202329;
+			z-index: 1;
+			border-bottom: 1px solid black;
+		}
+		header.section {
+			padding-top: 0;
+			border-radius: 0 0 10px 10px;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		nav{
+			height: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			overflow: hidden;
+		}
+		.nav-link{
+			text-transform: uppercase;
+			color: orange;
+			font: 20px sans-serif;
+			padding: 100% 25px;
+		}
+		.nav-link-hover{
+			background-color: red;
+			color: white;
+		}
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 13pt;
+			background-color: #202329;
+			padding: 0;
+			margin: 0;
+		}
+		h1{
+			font-size: 15pt;
+			color: #66fcf1;
+			text-align: center;
+			padding: 18px 0 18px 0;
+			margin: 0 0 10px 0;
+		}
+		h1 span{
+			border: 3px solid #45a29e;
+			border-radius: 7px;
+			padding: 10px;
+		}
+		p{
+			padding: 0;
+			margin: 0;
+		}
+		.img-circle{
+			border:3px solid white;
+			border-radius: 50%;
+		}
+		.section{
+			background-color: #363c45;
+			padding: 15px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			border-radius: 10px;
+		}
+		#header{
+			background-image: url("https://uploads-ssl.webflow.com/5e4dfa5d58d02b574c094982/5e61b936452770f1cc437223_Render%20Engine%20Blur.jpg");
+			background-size: cover;
+		}
+		#header img{
+			display: block;
+			width: 80px;
+			height: 80px;
+			margin: auto;
+		}
+		#header p{
+			font-size: 25pt;
+			color: #66fcf1;
+			padding-top: 5px;
+			margin: 0;
+			font-weight: bold;
+			text-align: center;
+		}
+		.selected{
+			background-color: #66fcf1;
+			font-weight: bold;
+			color: white;
+		}
+		.gallery{
+			display: flex;
+			flex-wrap: wrap;
+			margin: -1rem -1rem;
+		}
+		.gallery-item{
+			
+			flex: 1 0 24rem;
+			
+			margin: 1rem;
+			width:image width px; 
+			
+		}
+		.gallery-item-2{
+			
+			flex: 1 0 24rem;
+			
+			margin: 0.2rem;
+			width:image width px; 
+			
+		}
+		.gallery-image{
+			display: block;
+			box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+			width: 300px;
+			height: 300px;
+			object-fit: cover;
+			transition: transform 400ms ease-out;
+			font-size:80%; 
+			text-align:center;
+			overflow: hidden;
+		}
+		.gallery-image:hover{
+			transform: scale(1.1);
+		}
+		.gallery-image-2{
+			display: block;
+			box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+			width: 710px;
+			height: 400px;
+			object-fit: cover;
+			transition: transform 400ms ease-out;
+			font-size:80%; 
+			text-align:center;
+			overflow: hidden;
+		}
+		.gallery-image-2:hover{
+			transform: scale(1.05);
+		}
+		li{
+			margin-bottom: 15px;
+			font-weight: bold;
+		}
+		progress{
+			width: 70%;
+			height: 20px;
+			color: #66fcf1;
+			background: #000;
+		}
+		hr{
+			border: 0;
+			height: 1px;
+			background: #f36f48;
+		}
+		form{
+			text-align: center;
+			margin-top: 0;
+		}
+		.submit, #navbar .nav-link {
+			background: linear-gradient(to bottom, #43455c 50%, black 50%);
+			background-size: 100% 200%;
+			background-position: left top;
+			padding: 12px 45px;
+			border-radius: 5px;
+			cursor: pointer;
+			color: #66fcf1;
+			border: none;
+			outline: none;
+			margin: 0;
+			font-weight: bold;
+			text-decoration: none;
+			transition: .5s;
+		}
+		.submit:hover, #navbar .nav-link:hover{
+			background-position: right bottom;
+		}
+		textarea{
+			height: 100px;
+		}
+		input, textarea{
+			margin-bottom: 10px;
+			font-size: 11pt;
+			padding: 15px 10px 10px;
+			border: 1px solid #cecece;
+			background-color: #efefef;
+			color: #787575;
+			border-radius: 5px;
+			width: 70%;
+			outline: none;
+		}
+		.face{
+			transform: scale(0,4);
+			margin: 0 auto;
+			display: block;
+			margin-top: -35px;
+			margin-bottom: 25px;
+		}
+		#contacts img{
+			height: 50px;
+			width: 50px;
+			margin-left: 7px;
+			margin-right: 7px;
+		}
+		#contacts a{
+			text-decoration: none ;
+		}
+		#contacts img:hover{
+			opacity: 0.8;
+		}
+		#contacts{
+			text-align: center;
+		}
+		.copyright{
+			font-size: 18px;
+			text-align: center;
+			padding-bottom: 10px;
+			color: #66fcf1;
+		}
+		p{
+			color: #66fcf1;
+		}
+		li{
+			color: #66fcf1;
+		}
+	</style>
+    <title>Portfolio</title>
+	<link rel="icon" type="image/x-icon" href="./profile.png">
+  </head>
+  <body>
+    <header class="section">
+      <nav id="navbar">
+        <a href="#"class="nav-link">About Me</a>
+        <a href="#work"class="nav-link">My Projects</a>
+        <a href="#skills"class="nav-link">My Skills</a>
+        <a href="#contact"class="nav-link">Contact</a>
+      </nav>
+    </header
+    >
+    <div id="header" class="section">
+      <img alt="" class="img-circle" src="https://th.bing.com/th/id/OIP.GHGGLYe7gDfZUzF_tElxiQHaHa?pid=ImgDet&rs=1">
+
+      <p>Jai Hinduja</p>
+    </div> 
+    <div class="section">
+      <h1 id=#><span>About Me</span></h1>
+      <p>
+        Hey I'm <b>Jai Hinduja</b> a 14 year old studying in class 9th-B in Jain International School, Nagpur.I was born in Dubai and moved to india when i was 10 years old, i have been in jain international school for 4 years and i enjoy it.
+		<br>
+		I've always loved computers. I have been playing games for as long as i can remember and i like tinkering with whatever is on my screen, i like to code and i have learn basic c#, a little bit of Python, and a little node.js. I want to be a software engineer and help create something hich will benifit the society.
+         
+      </p>
+    </div>
+    <div class="section">
+      <h1 id="work"><span>My Projects</span></h1>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img class="gallery-image" src="./Scout.png"> 
+		  <br>
+		  
+		  <p>Scout is a free discord bot that offers a wide range of commands, <br> it is very useful and easy to use, it's commands include moderation,<br>  utillity, fun, settings, and also can be used as a chat bot! <br>It is programmed in node.js and is currenty in 27 servers used by 8000+ users.</p>
+		  <br>
+		  <br>
+			  <div class="gallery-item-2">
+				<img class="gallery-image-2" src="./Screenshot (183).png"> 
+				<br>
+				<p>CubeRun is a basic game where a cube keeps moving forward till<br> the finish line and if it touches the gray obstacles or falls of the<br> platform you lose the game, it was made in unity using c#.</p>
+    </div>
+	</div>
+	</div>
+	</div>
+    <div class="section">
+      <h1 id="skills"><span>My Skills</span></h1>
+      <ul>
+		<li>C# <br/>
+			<progress min="0" max="100" value="60"></progress>
+			</li>
+        <li>Html <br />
+        <progress min="10" max="100"value="55"></progress>
+        </li>
+		<li>Python <br/>
+			<progress min="0" max="100" value="50"></progress>
+			</li>
+        <li>Css<br/>
+        <progress min="0" max="100" value="40"></progress>
+        </li>
+        </ul>
+    </div>
+<div class="section">
+  <h1 id=contact><span>Contact Me</span></h1>
+  <form action="mailto:jaivhinduja@gmail.com" method="post" enctype="text/plain">
+  <input name="name" placeholder="Name" type="text" required /><br/>
+  <input name="email" placeholder="Email" type="email" required /><br/>
+   <textarea name="message" placeholder="Message" required></textarea> 
+   <input type="submit" value="SEND" class="submit"/>
+  </form>
+</div>
+<div class="section" id="contacts">
+  <h1><span>Follow Me</span></h1>
+  <div>
+    <a href="https://www.facebook.com/jai.hinduja.393">
+    <img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png" />
+    </a>
+    <a href="https://twitter.com/Nightfury6714?t=tY_7crpQBYfpJUPlK89mZw&s=09">
+    <img alt="Twitter" src="https://www.sololearn.com/Uploads/icons/twitter.png"/>
+    </a> 
+  </div>
+</div>
+  <div class="copyright">
+    &copy; 2023 Jai Hinduja. All rights reserved
+  </div>
+
+   </body>
+</html>                                                                                                         
